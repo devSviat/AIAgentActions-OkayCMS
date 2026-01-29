@@ -1,0 +1,24 @@
+{
+  "Okay": "4.5.2",
+  "version": "1.0.0",
+  "moduleName": "AIAgentActions",
+  "vendor": {
+    "email": "devsviat@proton.me",
+    "site": "https://github.com/devSviat"
+  },
+  "modifications": {
+    "front": [
+      {
+        "file": "product.tpl",
+        "changes": [
+          {
+            "find": "id=\"features\"",
+            "closestFind": "class=\"tabs__content\"",
+            "parent": true,
+            "appendAfter": "ai_agent_actions.tpl"
+          }
+        ]
+      }
+    ]
+  }
+}
