@@ -31,6 +31,12 @@
    ```bash
    git clone https://github.com/devSviat/AIAgentActions-OkayCMS.git AIAgentActions
    ```
+### Результат встановлення
+
+Шлях до модуля має бути таким:
+   ```bash
+   {OkayCMS_root}/Okay/Modules/Sviat/AIAgentActions/
+   ```
 
 ## Використання
 
