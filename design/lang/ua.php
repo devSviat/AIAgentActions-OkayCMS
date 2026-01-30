@@ -1,6 +1,6 @@
 <?php
 
-$lang['sviat__ai_agent_actions__section_title'] = 'Розібрати плюси і мінуси товару використовуючи ІІ';
+$lang['sviat__ai_agent_actions__section_title'] = 'Розібрати плюси і мінуси товару використовуючи ШІ';
 $lang['sviat__ai_agent_actions__prompt_title'] = 'Проаналізуй цей товар і допоможи прийняти рішення про покупку.';
 $lang['sviat__ai_agent_actions__prompt_product_name'] = 'Назва товару:';
 $lang['sviat__ai_agent_actions__prompt_product_url'] = 'Сторінка товару:';
