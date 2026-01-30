@@ -10,4 +10,4 @@ $lang['sviat__ai_agent_actions__feature_3'] = 'Product analysis using Grok';
 $lang['sviat__ai_agent_actions__feature_4'] = 'Product analysis using Perplexity';
 $lang['sviat__ai_agent_actions__feature_5'] = 'Product analysis using Claude';
 $lang['sviat__ai_agent_actions__how_it_works_title'] = 'How it works:';
-$lang['sviat__ai_agent_actions__how_it_works_text'] = 'When clicking on an AI service button, a prompt is generated with product information (name, characteristics, description, page URL) and the selected AI service opens in a new tab with a ready query. The prompt is also copied to the clipboard.';
+$lang['sviat__ai_agent_actions__how_it_works_text'] = 'When clicking on an AI service button, a prompt is generated with product information (name, page URL) and the selected AI service opens in a new tab with a ready query.';

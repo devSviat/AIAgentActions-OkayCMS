@@ -10,4 +10,4 @@ $lang['sviat__ai_agent_actions__feature_3'] = 'Аналіз товару за д
 $lang['sviat__ai_agent_actions__feature_4'] = 'Аналіз товару за допомогою Perplexity';
 $lang['sviat__ai_agent_actions__feature_5'] = 'Аналіз товару за допомогою Claude';
 $lang['sviat__ai_agent_actions__how_it_works_title'] = 'Як це працює:';
-$lang['sviat__ai_agent_actions__how_it_works_text'] = 'При натисканні на кнопку AI-сервісу формується промпт з інформацією про товар (назва, характеристики, опис, URL сторінки) і відкривається вибраний AI-сервіс у новій вкладці з готовим запитом. Промпт також копіюється в буфер обміну.';
+$lang['sviat__ai_agent_actions__how_it_works_text'] = 'При натисканні на кнопку AI-сервісу формується промпт з інформацією про товар (назва, URL сторінки) і відкривається вибраний AI-сервіс у новій вкладці з готовим запитом.';
