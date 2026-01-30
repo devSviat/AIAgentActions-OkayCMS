@@ -1,4 +1,5 @@
-{* Описание модуля AIAgentActions *}
+{$meta_title = $btr->sviat__ai_agent_actions__module_name|escape scope=global}
+
 <div class="row">
     <div class="col-lg-12 col-md-12">
         <div class="wrap_heading">

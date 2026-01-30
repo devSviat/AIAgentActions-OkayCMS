@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     const PROVIDERS = {
@@ -46,11 +46,11 @@
     function getProductFeatures() {
         const features = [];
         const featureItems = document.querySelectorAll(SELECTORS.features);
-        
+
         featureItems.forEach(item => {
             const nameEl = item.querySelector(SELECTORS.featureName);
             const valueEl = item.querySelector(SELECTORS.featureValue);
-            
+
             if (nameEl && valueEl) {
                 features.push({
                     name: nameEl.textContent.trim().replace(':', ''),
@@ -58,7 +58,7 @@
                 });
             }
         });
-        
+
         return features;
     }
 
@@ -71,10 +71,10 @@
         if (!descriptionEl) {
             return '';
         }
-        
+
         const text = descriptionEl.textContent.trim();
-        return text.length > MAX_DESCRIPTION_LENGTH 
-            ? text.substring(0, MAX_DESCRIPTION_LENGTH) 
+        return text.length > MAX_DESCRIPTION_LENGTH
+            ? text.substring(0, MAX_DESCRIPTION_LENGTH)
             : text;
     }
 
@@ -83,8 +83,8 @@
      * @returns {Object}
      */
     function getTranslations() {
-        return (typeof okay !== 'undefined' && okay.ai_agent_actions_translations) 
-            ? okay.ai_agent_actions_translations 
+        return (typeof okay !== 'undefined' && okay.ai_agent_actions_translations)
+            ? okay.ai_agent_actions_translations
             : getDefaultTranslations();
     }
 
@@ -119,9 +119,9 @@
         if (!features.length) {
             return '';
         }
-        
-        return `\n\n${translations.prompt_features || translations.features}\n` + 
-               features.map(f => `- ${f.name}: ${f.value}`).join('\n');
+
+        return `\n\n${translations.prompt_features || translations.features}\n` +
+            features.map(f => `- ${f.name}: ${f.value}`).join('\n');
     }
 
     /**
@@ -142,13 +142,15 @@
         const translations = getTranslations();
         const url = getArticleUrl();
         const title = getTitle();
-        const features = getProductFeatures();
-        const description = getProductDescription();
+        // const features = getProductFeatures();
+        // const description = getProductDescription();
+        // ${formatFeatures(features, translations)}
+        // ${formatDescription(description, translations)}
 
         const prompt = `${translations.prompt_title || translations.title}
 
 ${translations.prompt_product_name || translations.product_name} ${title}
-${translations.prompt_product_url || translations.product_url} ${url}${formatFeatures(features, translations)}${formatDescription(description, translations)}
+${translations.prompt_product_url || translations.product_url} ${url}
 
 ${translations.prompt_task_1 || translations.task_1}
 ${translations.prompt_task_2 || translations.task_2}
@@ -158,7 +160,7 @@ ${translations.prompt_task_5 || translations.task_5}
 ${translations.prompt_task_6 || translations.task_6}
 
 ${translations.prompt_warning || translations.warning}`;
-        
+
         return prompt;
     }
 
@@ -170,18 +172,6 @@ ${translations.prompt_warning || translations.warning}`;
     function detectProvider(btn) {
         const provider = btn.getAttribute('data-provider');
         return provider && PROVIDERS[provider] ? provider : null;
-    }
-
-    /**
-     * Копіює текст в буфер обміну
-     * @param {string} text
-     */
-    function copyToClipboard(text) {
-        if (navigator.clipboard?.writeText) {
-            navigator.clipboard.writeText(text).catch(() => {
-                // Мовчазно ігноруємо помилки копіювання
-            });
-        }
     }
 
     /**
@@ -204,9 +194,6 @@ ${translations.prompt_warning || translations.warning}`;
 
         // Відкриваємо AI сервіс у новій вкладці
         window.open(targetUrl, '_blank', 'noopener,noreferrer');
-        
-        // Копіюємо промпт в буфер обміну
-        copyToClipboard(prompt);
     }
 
     // Делегування подій: обробка кліків по кнопкам
